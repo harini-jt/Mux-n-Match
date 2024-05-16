@@ -15,3 +15,4 @@
 # vendor/
 # secrets
 .env
+ignore
