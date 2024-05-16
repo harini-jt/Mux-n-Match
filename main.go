@@ -15,6 +15,10 @@ func main() {
 	router := route.PathPrefix("/api/v1").Subrouter() //Base Path
 	router.HandleFunc("/createProfile", createProfile).Methods("POST")
 	router.HandleFunc("/getUserProfile", getUserProfile).Methods("GET")
+	router.HandleFunc("/getAllUsers", getAllUsers).Methods("GET")
+	router.HandleFunc("/updateProfile", updateProfile).Methods("PATCH")
+	router.HandleFunc("/deleteProfile", deleteProfile).Methods("GET")
+
 	// Run Server
 	log.Fatal(http.ListenAndServe(":8000", jsonContentTypeMiddleware(router)))
 
